@@ -187,10 +187,11 @@ doraScroll.prototype = {
         }
     },
 //  重设滚动条
-    reSetScrollBar : function(objId,container,contentBox){
-            var _scrollBar = $('#'+objId);
-            var _container = $(container);
-            var _content = $(contentBox);
+    reSetScrollBar : function(){
+            var _this = this;
+            var _scrollBar = $('#'+_this.id);
+            var _container = $(_this.container);
+            var _content = $(_this.contentBox);
 
             var m = $(_container).height()/$(_content).height();
             $(_scrollBar).css({
