@@ -9,17 +9,6 @@ function scrollHtml(objId){
     return html;
 }
 
-//重设滚动条
-function reSetScrollBar(objId,container,contentBox){
-    var _scrollBar = $('#'+objId);
-    var _container = $(container);
-    var _content = $(contentBox);
-
-    var m = $(_container).height()/$(_content).height();
-    $(_scrollBar).css({
-        'height' : $(_container).height()*m + 'px'
-    });
-}
 
 var doraScroll = function(jsonData){
     var objId = "scrollBar_"+Math.round(Math.random()*100);
@@ -196,6 +185,17 @@ doraScroll.prototype = {
                checkTopVal(Number(contentTop) + scrollSpeed,'up');
             }
         }
+    },
+//  重设滚动条
+    reSetScrollBar : function(objId,container,contentBox){
+            var _scrollBar = $('#'+objId);
+            var _container = $(container);
+            var _content = $(contentBox);
+
+            var m = $(_container).height()/$(_content).height();
+            $(_scrollBar).css({
+                'height' : $(_container).height()*m + 'px'
+            });
     }
 
 };

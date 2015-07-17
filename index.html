@@ -17,7 +17,6 @@
 
             };
 
-
             var jsonData2 = {
                 container : $('#panel2'),
                 contentBox : $('#panelBody2'),
@@ -54,18 +53,23 @@
             var p3 = new doraScroll(jsonData3);
             var p4 = new doraScroll(jsonData4);
 
-//            var p5 = new doraScroll(jsonData5);
+            $('#addContent').click(function(){
+                $('#panelBody1').append("<p>This is a test</p>");
+                // 滚动条长度重置
+                p1.reSetScrollBar(p1.id,p1.container,p1.contentBox);
 
-
-
-
+            })
 
 
         })
     </script>
 </head>
 <body>
+<br/><br/>
+<p class="text-center"><button type="button" class="btn btn-primary" id="addContent">增加第一个面板内容</button></p>
+
 <div id="mainContent">
+
     <div style="width: 400px;margin: 0 auto;">
         <div class="panel panel-default" style="height:240px;" id="panel1">
             <div class="panel-body" id="panelBody1">
